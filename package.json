@@ -36,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/ALee-DF/vr-conference/issues"
   },
-  "homepage": "https://github.com/ALee-DF/vr-conference#readme"
+  "homepage": "https://github.com/ALee-DF/vr-conference#readme",
+  "dependencies": {
+    "react-vr-cli": "^0.3.6"
+  }
 }
