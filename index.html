@@ -11,7 +11,13 @@
         <img id="ground-texture" src="./images/wooden-floor.jpg" />
         <img id="walls" src="./images/wooden-walls.jpg" />
       </a-assets>
-      <a-text value="VR Conference" color="#BBB" position="-1.1 2 -3" scale="1.5 1.5 1.5"></a-text>
+      <a-text
+        value="VR Conference"
+        color="#BBB"
+        position="-1.1 2 -3"
+        scale="1.5 1.5 1.5">
+      </a-text>
+
       <a-plane
         src="#ground-texture"
         rotation="-90 0 0"
@@ -19,10 +25,38 @@
         height="30"
         repeat="10 10">
       </a-plane>
-      <a-plane></a-plane>
-      <a-plane></a-plane>
-      <a-plane></a-plane>
-      <a-plane></a-plane>
+      <a-plane
+        position="0 6 -15"
+        src="#walls"
+        rotation="0 0 0"
+        width="30"
+        height="15"
+        repeat="2 1">
+      </a-plane>
+      <a-plane
+        position="-15 6 0"
+        src="#walls"
+        rotation="0 90 0"
+        width="30"
+        height="15"
+        repeat="2 1">
+      </a-plane>
+      <a-plane
+        position="15 6 0"
+        src="#walls"
+        rotation="0 -90 0"
+        width="30"
+        height="15"
+        repeat="2 1">
+      </a-plane>
+      <a-plane
+        position="0 6 15"
+        src="#walls"
+        rotation="0 180 0"
+        width="30"
+        height="15"
+        repeat="2 1">
+      </a-plane>
     </a-scene>
   </body>
 </html>
