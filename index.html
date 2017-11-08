@@ -7,8 +7,11 @@
   </head>
   <body>
     <a-scene>
+      <a-assets>
+        <img id="ground-texture" src="./wooden-floor.jpg" />
+      </a-assets>
       <a-text value="VR Conference" color="#BBB" position="-1.1 2 -3" scale="1.5 1.5 1.5"></a-text>
-      <a-plane></a-plane>
+      <a-plane src="#ground-texture"></a-plane>
     </a-scene>
   </body>
 </html>
