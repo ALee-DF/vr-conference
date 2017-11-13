@@ -17,6 +17,12 @@ module.exports = function createApp() {
   app.use(express.static(path.join(__dirname, 'public')))
 
   app.post('/signin', upload.single('user-image'), (req, res) => {
+    const imageObject = {
+      'user-image': req.file.filename
+    }
+    const queryString = '/?' + querystring.stringify(req.body) + '&' +
+      querystring.stringify(imageObject)
+    res.redirect('/conference' + queryString)
   })
   return app
 }
