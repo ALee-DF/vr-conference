@@ -5,6 +5,16 @@
     <title>VR Conference Sign In</title>
   </head>
   <body>
-
+    <form action="/signin" enctype="multipart/form-data" method="post">
+      <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text required" />
+      </div>
+      <div>
+        <label for="user-image">Image</label>
+        <input id="user-image" name="user-image" type="file" />
+      </div>
+      <button type="submit">Join</button>
+    </form>
   </body>
 </html>
