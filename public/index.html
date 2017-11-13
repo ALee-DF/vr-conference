@@ -9,24 +9,26 @@
       crossorigin="anonymous" />
   </head>
   <body>
-    <form action="/signin" enctype="multipart/form-data" method="post">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text required" />
-      </div>
-      <div class="form-group">
-        <label for="user-image">Image</label>
-        <input
-          type="file"
-          id="user-image"
-          class="form-control-file"
-          aria-describedby="filehelp"
-          name="user-image" />
-        <small id="filehelp" class="form-text text-muted">
-          Please choose a display avatar of your choosing.
-        </small>
-      </div>
-      <button type="submit" class="btn btn-primary">Join</button>
-    </form>
+    <div class="container">
+      <form action="/signin" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text required" />
+        </div>
+        <div class="form-group">
+          <label for="user-image">Image</label>
+          <input
+            type="file"
+            id="user-image"
+            class="form-control-file"
+            aria-describedby="filehelp"
+            name="user-image" />
+          <small id="filehelp" class="form-text text-muted">
+            Please choose a display avatar of your choosing.
+          </small>
+        </div>
+        <button type="submit" class="btn btn-primary">Join</button>
+      </form>
+    </div>
   </body>
 </html>
