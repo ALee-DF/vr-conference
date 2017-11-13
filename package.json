@@ -2,6 +2,9 @@
   "name": "vr-conference",
   "private": true,
   "version": "1.0.0",
+  "engines": {
+    "node": "8.8.0"
+  },
   "description": "A virtual reality application for business users to discuss business topics in a VR conference room.",
   "main": "index.js",
   "scripts": {
@@ -9,6 +12,7 @@
     "lint:html": "htmlhint ./**/*.html",
     "lint:css": "stylelint ./**/*.css",
     "lint:js": "eslint ./**/*.js",
+    "start": "node .",
     "test": "npm run lint",
     "precommit": "npm test",
     "watch": "nodemon ."
