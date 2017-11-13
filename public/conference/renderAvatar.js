@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const renderAvatar = (username, image) => {
+const renderAvatar = (username, imageUrl) => {
   const $avatar = document.createElement('a-entity')
   $avatar.setAttribute('id', 'avatar')
   $avatar.setAttribute('geometry', 'width: 3; height: 3; depth: 0.1')
@@ -9,7 +9,7 @@ const renderAvatar = (username, image) => {
   $avatarImage.setAttribute('position', '0 0.25 -0.06')
   $avatarImage.setAttribute('rotation', '0 180 0')
   $avatarImage.setAttribute('geometry', 'primitive: plane; width: 3; height: 2.5')
-  $avatarImage.setAttribute('material', 'src: ./images/uploads/' + image)
+  $avatarImage.setAttribute('material', 'src: ' + imageUrl)
 
   const $avatarUsername = document.createElement('a-entity')
   $avatarUsername.setAttribute('position', '0 -1.25 -0.06')
