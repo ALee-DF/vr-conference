@@ -10,9 +10,12 @@ const storage = multer.diskStorage({
   }
 })
 const upload = multer({ storage: storage })
-console.log(upload)
+
 module.exports = function createApp() {
   const app = express()
   app.use(express.static(path.join(__dirname, 'public')))
+
+  app.post('/signin', upload.single('user-image'), (req, res) => {
+  })
   return app
 }
