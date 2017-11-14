@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <title>VR Conference</title>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="renderAvatar.js"></script>
+    <script src="index.js"></script>
   </head>
   <body>
     <a-scene>
@@ -69,6 +71,12 @@
 
       <a-box color="brown" depth="5" height="0.1" width="5"></a-box>
       <a-cylinder position="0 -0.8 0" color="black" height="1.5" radius="1."></a-cylinder>
+      <a-entity
+        spawn-point
+        id="spawn-point"
+        position="0 0 14">
+        <a-camera avatar-position></a-camera>
+      </a-entity>
     </a-scene>
   </body>
 </html>

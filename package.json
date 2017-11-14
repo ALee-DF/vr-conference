@@ -2,6 +2,9 @@
   "name": "vr-conference",
   "private": true,
   "version": "1.0.0",
+  "engines": {
+    "node": "8.8.0"
+  },
   "description": "A virtual reality application for business users to discuss business topics in a VR conference room.",
   "main": "index.js",
   "scripts": {
@@ -9,8 +12,10 @@
     "lint:html": "htmlhint ./**/*.html",
     "lint:css": "stylelint ./**/*.css",
     "lint:js": "eslint ./**/*.js",
+    "start": "node .",
     "test": "npm run lint",
-    "precommit": "npm test"
+    "precommit": "npm test",
+    "watch": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -29,6 +34,7 @@
     "eslint-plugin-standard": "3.0.1",
     "htmlhint": "0.9.13",
     "husky": "0.14.3",
+    "nodemon": "^1.12.1",
     "npm-run-all": "^4.1.1",
     "stylelint": "8.0.0",
     "stylelint-config-standard": "17.0.0"
@@ -36,5 +42,12 @@
   "bugs": {
     "url": "https://github.com/ALee-DF/vr-conference/issues"
   },
-  "homepage": "https://github.com/ALee-DF/vr-conference#readme"
+  "homepage": "https://github.com/ALee-DF/vr-conference#readme",
+  "dependencies": {
+    "cloudinary": "^1.9.1",
+    "datauri": "^1.0.5",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "multer": "^1.3.0"
+  }
 }
