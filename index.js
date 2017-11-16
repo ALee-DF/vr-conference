@@ -13,6 +13,7 @@ const avatarsList = []
 const idCorrelate = {}
 io.on('connection', function (socket) {
   socket.on('user joined', function (userdata) {
+    socket.broadcast.emit('new user', userdata)
     avatarsList.push(userdata)
     idCorrelate[socket.id] = userdata.avatarID
   })
