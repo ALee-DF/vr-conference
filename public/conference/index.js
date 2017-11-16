@@ -1,5 +1,6 @@
 /* global AFRAME */
 /* global renderAvatar */
+/* global socket */
 let avatarID
 AFRAME.registerComponent('spawn-point', {
   init: function () {
@@ -7,6 +8,7 @@ AFRAME.registerComponent('spawn-point', {
     const username = params.get('username')
     const userImage = params.get('user-image')
     avatarID = params.get('id')
+    socket.emit('user joined', { username, userImage, avatarID })
     const $spawnPoint = document.querySelector('#spawn-point')
     $spawnPoint.appendChild(renderAvatar(username, userImage, avatarID))
   }
