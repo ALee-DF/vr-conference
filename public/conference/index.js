@@ -11,6 +11,11 @@ AFRAME.registerComponent('spawn-point', {
     socket.emit('user joined', { username, userImage, avatarID })
     const $spawnPoint = document.querySelector('#spawn-point')
     $spawnPoint.appendChild(renderAvatar(username, userImage, avatarID))
+    socket.on('load other avatars', function (avatarsList) {
+      avatarsList.forEach(({ username, userImage, avatarID }) => {
+        $spawnPoint.appendChild(renderAvatar(username, userImage, avatarID))
+      })
+    })
   }
 })
 
