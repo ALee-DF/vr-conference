@@ -19,6 +19,7 @@ AFRAME.registerComponent('avatar-position', {
     const $avatar = document.querySelector('#' + avatarID)
     const avatarPosition = this.el.getAttribute('position')
     const avatarRotation = this.el.getAttribute('rotation')
+    socket.emit('avatar position', { avatarPosition, avatarRotation, avatarID })
     $avatar.setAttribute('position', avatarPosition.x + ' ' + avatarPosition.y + ' ' + avatarPosition.z)
     $avatar.setAttribute('rotation', avatarRotation.x + ' ' + avatarRotation.y + ' ' + avatarRotation.z)
   }
