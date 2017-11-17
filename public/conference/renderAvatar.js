@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-const renderAvatar = (username, imageUrl) => {
+const renderAvatar = (username, imageUrl, avatarID) => {
   const $avatar = document.createElement('a-entity')
-  $avatar.setAttribute('id', 'avatar')
+  $avatar.setAttribute('id', avatarID)
   $avatar.setAttribute('geometry', 'width: 3; height: 3; depth: 0.1')
   $avatar.setAttribute('material', 'color: red')
 

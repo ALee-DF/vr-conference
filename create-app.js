@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const querystring = require('querystring')
+const uuidv4 = require('uuid/v4')
 const multer = require('multer')
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
@@ -23,7 +24,8 @@ module.exports = function createApp() {
     cloudinary.uploader.upload(imageDataUri, result => {
       const queryObject = {
         username: req.body.username,
-        'user-image': result.secure_url
+        'user-image': result.secure_url,
+        id: 'id' + uuidv4()
       }
       const queryString = '/?' + querystring.stringify(queryObject)
       res.redirect('/conference' + queryString)
