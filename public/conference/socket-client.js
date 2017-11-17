@@ -13,3 +13,8 @@ socket.on('update avatar position and rotation', function ({ avatarPosition, ava
     $avatar.setAttribute('rotation', avatarRotation.x + ' ' + avatarRotation.y + ' ' + avatarRotation.z)
   }
 })
+
+socket.on('delete avatar', function (avatarID) {
+  const $avatar = document.querySelector('#' + avatarID)
+  $avatar.parentNode.removeChild($avatar)
+})
