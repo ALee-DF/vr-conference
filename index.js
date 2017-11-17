@@ -18,7 +18,7 @@ io.on('connection', function (socket) {
     idCorrelate[socket.id] = userdata.avatarID
   })
 
-  socket.on(' avatar position', function ({ avatarPosition, avatarRotation, avatarID }) {
+  socket.on('avatar position', function ({ avatarPosition, avatarRotation, avatarID }) {
     socket.broadcast.emit('update avatar position and rotation', { avatarPosition, avatarRotation, avatarID })
   })
 })
