@@ -3,7 +3,7 @@
 /* global socket */
 let avatarID
 AFRAME.registerComponent('spawn-point', {
-  init: function () {
+  init() {
     const params = new URLSearchParams(window.location.search)
     const username = params.get('username')
     const userImage = params.get('user-image')
@@ -11,7 +11,7 @@ AFRAME.registerComponent('spawn-point', {
     socket.emit('user joined', { username, userImage, avatarID })
     const $spawnPoint = document.querySelector('#spawn-point')
     $spawnPoint.appendChild(renderAvatar(username, userImage, avatarID))
-    socket.on('load other avatars', function (avatarsList) {
+    socket.on('load other avatars', avatarsList => {
       avatarsList.forEach(({ username, userImage, avatarID }) => {
         $spawnPoint.appendChild(renderAvatar(username, userImage, avatarID))
       })
@@ -20,7 +20,7 @@ AFRAME.registerComponent('spawn-point', {
 })
 
 AFRAME.registerComponent('avatar-position', {
-  tick: function () {
+  tick() {
     const $avatar = document.querySelector('#' + avatarID)
     const avatarPosition = this.el.getAttribute('position')
     const avatarRotation = this.el.getAttribute('rotation')

@@ -11,19 +11,19 @@ server.listen(process.env.PORT, () => {
 
 const avatarsList = []
 const idCorrelate = {}
-io.on('connection', function (socket) {
-  socket.on('user joined', function (userdata) {
+io.on('connection', socket => {
+  socket.on('user joined', userdata => {
     socket.broadcast.emit('new user', userdata)
     socket.emit('load other avatars', avatarsList)
     avatarsList.push(userdata)
     idCorrelate[socket.id] = userdata.avatarID
   })
 
-  socket.on('avatar position', function ({ avatarPosition, avatarRotation, avatarID }) {
+  socket.on('avatar position', ({ avatarPosition, avatarRotation, avatarID }) => {
     socket.broadcast.emit('update avatar position and rotation', { avatarPosition, avatarRotation, avatarID })
   })
 
-  socket.on('disconnect', function () {
+  socket.on('disconnect', () => {
     socket.broadcast.emit('delete avatar', idCorrelate[socket.id])
     const deleteIndex = avatarsList.findIndex(userdata => {
       return userdata.avatarID === idCorrelate[socket.id]
